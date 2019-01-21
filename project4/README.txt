@@ -1,0 +1,1 @@
+Link List library. This api performs all of the link list standard functions in addition it also adds/links two different link lists. To run the program in terminal use the Makefile and its commands; executable output and make clean to delete all executables.
