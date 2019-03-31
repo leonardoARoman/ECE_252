@@ -1,21 +1,37 @@
-#include "cube.h"
+#include <iostream>
+#include "shape.h"
+#include "square.h"
+#include "triangle.h"
+#include "circle.h"
+#include "linklist.cpp"
+
 //#include "linklist.h"
 int main(){
-  Shape line("line",5);
-  Shape *square = new Square("square",6,6);
-  Shape *cube = new Cube("cube",5,5,5);
-  //Square square("square",5,5);
-  //Cube cube("cube",5,5,5);
-  cout<<"The area of the line is "<<line.getArea()<<endl;
-  cout<<"The area of the square is "<<square->getArea()<<endl;
-  cout<<"The area of the cube is "<<cube->getArea()<<endl;
-  ShapeNode node(&line);
-  ShapeNode node2(square);
-  ShapeNode node3(cube);
-  LinkList *ll = new LinkList();
-  ll->addNode(&node);
-  ll->addNode(&node2);
-  ll->addNode(&node3);
-  ll->printList();
+  std::cout << "Hello from shape class" << std::endl;
+  Square square("square",5.0,4.0);
+  Cube cube("cube",5.0,4.0,3.0);
+  Triangle triangle("triangle",4.0,5.0);
+  Cone cone("cone",4.0,5.0);
+  Circle circle("circle",3.0);
+  Sphere sphere("sphere",3.0);
+
+  ShapeNode<Shape> node1(&square);
+  ShapeNode<Shape> node2(&cube);
+  ShapeNode<Shape> node3(&triangle);
+  ShapeNode<Shape> node4(&cone);
+  ShapeNode<Shape> node5(&circle);
+  ShapeNode<Shape> node6(&sphere);
+
+  LinkList<Shape> linklist;
+  linklist.addNode(&node1);
+  linklist.addNode(&node2);
+  linklist.addNode(&node3);
+  linklist.addNode(&node4);
+  linklist.addNode(&node5);
+  linklist.addNode(&node6);
+
+  linklist.linklist();
+  //std::cout << "node square area: " << node.getData()->getArea() <<std::endl;
+
   return 0;
 }

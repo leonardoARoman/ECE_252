@@ -1,14 +1,14 @@
 #include <iostream>
-using namespace std;
+/*
+  * @author Leonardo Roman
+  * Abstract class Shape
+*/
 class Shape{
 protected:
-  string type;
-  double lenght;
+  double width;
+  std::string type;
 public:
-  Shape(string,double);
-  void setType(string);
-  string getType();
-  void setLenght(double);
-  double getLenght();
-  virtual double getArea();
+  // Pure virtual class (abstract class)
+  virtual double getArea() = 0;
+  virtual std::string getType() = 0;
 };
